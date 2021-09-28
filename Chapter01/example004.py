@@ -11,3 +11,7 @@ elif x == 1:
     print('True')
 else:
     print('Something else')
+
+words = ['cat', 'dog', 'elephant']
+for w in words:
+    print(w)
