@@ -25,5 +25,5 @@ print("Time to sum an iterator: %f" % (time.time() - t1))
 
 # the time to build and sum a list
 t1=time.time()
-sum(oddLst (1,1000000))
+sum(oddLst(1,1000000))
 print("Time to build and sum a list: %f" % (time.time() - t1))
