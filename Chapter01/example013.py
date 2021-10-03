@@ -19,12 +19,14 @@ class Employee(object):
         self.owed = 0
         return("paid %s " % self.name)
 
-emp1 = Employee("Jill", 18.50)
-emp2 = Employee("Jack", 15.50)
+if __name__ == '__main__':
 
-print(Employee.numEmployee)
+    emp1 = Employee("Jill", 18.50)
+    emp2 = Employee("Jack", 15.50)
 
-print(emp1.hours(20))
-print(emp1.owed)
-print(emp1.pay())
+    print(Employee.numEmployee)
+
+    print(emp1.hours(20))
+    print(emp1.owed)
+    print(emp1.pay())
 
