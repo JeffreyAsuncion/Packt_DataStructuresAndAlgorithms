@@ -14,3 +14,10 @@ decimal.getcontext().prec=4
 print(x*y)
 
 
+import fractions
+
+print(fractions.Fraction(3,4))
+
+print(fractions.Fraction(0.5))
+
+print(fractions.Fraction("0.25"))
