@@ -25,3 +25,13 @@ list1.extend(list2)
 print("exteded list : ", list1)
 
 
+print("This is sum(list) : ", sum(list1))
+print("This is len(list) : ", len(list1))
+list1.sort()
+print("This is list1.sort : ", list1)
+
+list1.remove(12)
+print("This is list1.remove(12) : ", list1)
+
+
+
