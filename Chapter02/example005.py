@@ -12,5 +12,16 @@ print(list2)
 
 print("min : ", min(list1))
 
-
 print("max : ", max(list1))
+
+list1.insert(0,2)   # insert an value 2 at index 0
+print("insert an value 2 at index 0 : ", list1)
+
+list1.reverse()
+print("reverse list : ", list1)
+
+list2 = [11, 12]
+list1.extend(list2)
+print("exteded list : ", list1)
+
+
