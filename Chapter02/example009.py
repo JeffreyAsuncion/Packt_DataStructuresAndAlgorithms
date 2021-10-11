@@ -26,3 +26,9 @@ d = dict([
 ])
 
 print('d : ', d)
+
+d['Thursday'] = 4   # add an item
+
+print(d)
+print('Wednesday' in d)     # Test membership ( only in keys)
+print(5 in d)               # membership do not check in values
