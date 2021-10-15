@@ -10,3 +10,5 @@ d = {'one' : 1,
 print(sorted(list(d)))
 
 print(sorted(d.values()))
+
+print(sorted(list(d), key=d.__getitem__))
