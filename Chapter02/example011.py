@@ -12,3 +12,8 @@ print(sorted(list(d)))
 print(sorted(d.values()))
 
 print(sorted(list(d), key=d.__getitem__))
+
+list_comprehension = [value for (key,value) in sorted(d.items())]
+print(list_comprehension)
+
+print(sorted(list(d), key=d.__getitem__, reverse=True))
