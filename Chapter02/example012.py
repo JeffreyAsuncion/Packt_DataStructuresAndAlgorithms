@@ -14,12 +14,14 @@ def wordcount(fname):
             if word not in count:
                 count[word]=1
             else:
-                count[word]=+1
+                count[word]+=1
     return(count)
 
 count=wordcount('alice.txt')
+# count=wordcount('textcount.txt')
 
 filtered={key:value for key, value in count.items() if value < 20 and value>16}
 
 print(count)
+print("="*20)
 print(filtered)
