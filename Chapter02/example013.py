@@ -29,3 +29,9 @@ print(s1.intersection(s2))
 
 print("s1.union(s2)")
 print(s1.union(s2))
+
+print('ab' in s1)
+print('ab' not in s1)
+
+for element in s1:
+    print(element)
