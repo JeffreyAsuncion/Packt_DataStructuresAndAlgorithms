@@ -15,3 +15,17 @@ print(s1)
 
 s1.clear()
 print(s1)
+
+print("="*20)
+
+s1 = {'ab',3,4,(5,6)}
+s2 = {'ab',7,(7,6)}
+
+print("same as s1.difference(s2)")
+print(s1-s2)
+
+print("s1.intersection(s2)")
+print(s1.intersection(s2))
+
+print("s1.union(s2)")
+print(s1.union(s2))
