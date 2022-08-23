@@ -21,3 +21,6 @@ print(fractions.Fraction(3,4))
 print(fractions.Fraction(0.5))
 
 print(fractions.Fraction("0.25"))
+
+print(x.ln())
+print(x.exp())

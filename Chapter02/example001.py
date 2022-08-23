@@ -17,4 +17,4 @@ print(d, "is of type", type(d))
 
 print('true division',7/5) # true division
 
-print('floor division operator',7//5) # floor division operator
+print('floor division operator',-7//5) # floor division operator
