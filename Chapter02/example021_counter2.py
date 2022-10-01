@@ -21,5 +21,9 @@ print(ct)
 
 print(sorted(ct.elements()))
 
+print()
+print(ct.most_common())
 
-
+print()
+ct.subtract({'e':2})
+print(ct)
