@@ -7,6 +7,8 @@ print("before : ",list1)
 list1.append(1)
 print("after  : ",list1)
 
+print('*'*10)
+
 list2 = list1 * 2
 print(list2)
 

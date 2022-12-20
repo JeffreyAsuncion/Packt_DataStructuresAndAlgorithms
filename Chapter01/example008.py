@@ -31,16 +31,24 @@ def f1(x):
 def f2(x):
     return x*4
 
+
+###########################
+
+# version#01 - for loop
 lst = []
 for i in range(16):
     lst.append(f1(f2(i)))
 
+# version#02 - list comprehension
 print(lst)
 print([f1(x) for x in range(64) if x in [f2(j) for j in range(16)]])
 
+#######################################3
 
-list1 = [[1,2,3],[4,5,6]]
-print([i * j for i in list1[0] for j in list1[1]])
 
-words = 'here is a sentence'.split()
-print([[word, len(word)] for word in words])
+
+# list1 = [[1,2,3],[4,5,6]]
+# print([i * j for i in list1[0] for j in list1[1]])
+
+# words = 'here is a sentence'.split()
+# print([[word, len(word)] for word in words])
