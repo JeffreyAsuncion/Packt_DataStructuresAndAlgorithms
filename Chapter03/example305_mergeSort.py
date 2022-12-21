@@ -22,12 +22,15 @@ def merge(first_sublist, second_sublist):
         else:
              merged_list.append(second_sublist[j])  
              j += 1
+        print(f'both {merged_list}')
     while i < len(first_sublist):  
          merged_list.append(first_sublist[i])  
-         i += 1  
+         i += 1
+         print(f'left {merged_list}')  
     while j < len(second_sublist):
          merged_list.append(second_sublist[j])  
          j += 1
+         print(f'right {merged_list}')
     return merged_list  
 
 

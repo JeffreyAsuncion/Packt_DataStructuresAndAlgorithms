@@ -21,6 +21,7 @@ def karatsuba(x,y):
     ac = karatsuba(a,c)
     bd = karatsuba(b,d)
     ad_bc = karatsuba((a+b),(c+d)) - ac - bd
+    print(ad_bc)
 
     # perform multiplication
     return (((10**n)*ac)+bd+((10**n_2)*(ad_bc)))
