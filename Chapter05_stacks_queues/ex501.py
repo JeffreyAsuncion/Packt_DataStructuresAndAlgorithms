@@ -1,3 +1,8 @@
+"""
+https://github.com/PacktPublishing/Hands-On-Data-Structures-and-Algorithms-with-Python-Second-Edition/blob/master/Chapter05
+
+"""
+
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -38,4 +43,36 @@ class Stack:
         if self.top:
             return self.top.data
         return None
+
+def check_brackets(statement):
+    stack = Stack()
+
+    for ch in statement:
+        if ch in ('{','[','('):
+            stack.push(ch)
+        if ch in ('}',']',')'):
+            last = stack.pop()
+            if (last == '{') and (ch == '}'):
+                continue
+            elif (last == '[') and (ch == ']'):
+                continue
+            elif (last == '(') and (ch == ')'):
+                continue
+            else:
+                return False
     
+    if stack.size > 0:
+        return False
+    else:
+        return True
+
+
+s1 = {
+    "{(foo)(bar)}[hello](((this)is)a)test",
+    "{(foo)(bar)}[hello](((this)is)atest",
+    "{(foo)(bar)}[hello](((this)is)a)test))"
+}
+
+for s in s1:
+    m = check_brackets(s)
+    print("{}: {}".format(s, m))
