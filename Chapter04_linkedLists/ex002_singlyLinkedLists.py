@@ -32,6 +32,9 @@ class SinglyLinkedList:
             print('1st add')
         self.count += 1
     
+    # this creates a "list" of data
+    # actually a generator to be used below
+    # https://realpython.com/introduction-to-python-generators/
     def iter(self):
         """ Iterate through the list. """
         current = self.tail
@@ -65,6 +68,7 @@ class SinglyLinkedList:
                 return True
         return False
 
+    # this allows s[i] to __getitem__
     def __getitem__(self, index):
         if index > self.count - 1:
             raise Exception("Index out of range.")
@@ -73,6 +77,7 @@ class SinglyLinkedList:
             current = current.next
         return current.data
 
+    # this allows s[i] = newData to __setitem__
     def __setitem__(self, index, value):
         if index > self.count - 1:
             raise Exception("Index out of range.")
@@ -80,6 +85,17 @@ class SinglyLinkedList:
         for n in range(index):
             current = current.next
         current.data = value
+
+
+# sll = SinglyLinkedList()
+# for i in range(100,120):
+#     sll.append(i)
+
+# print(sll.search(100))
+
+# print(sll.__getitem__(10))
+
+##################################
 
 words = SinglyLinkedList()
 words.append('foo')
@@ -95,29 +111,29 @@ print("modify by index")
 words[4] = "Quux"
 print("Modified node by index: {}".format(words[4]))
 
-print("This list has {} elements.".format(words.count))
-for word in words.iter():
-    print("Got this data: {}".format(word))
+# print("This list has {} elements.".format(words.count))
+# for word in words.iter():
+#     print("Got this data: {}".format(word))
 
-if words.search('foo'):
-    print("Found foo in the list.")
-if words.search('amiga'):
-    print("Found amiga in the list.")
+# if words.search('foo'):
+#     print("Found foo in the list.")
+# if words.search('amiga'):
+#     print("Found amiga in the list.")
 
-print("Now we try to delete an item")
-words.delete('bim')
-print("List now has {} elements".format(words.count))
-for word in words.iter():
-    print("data: {}".format(word))
+# print("Now we try to delete an item")
+# words.delete('bim')
+# print("List now has {} elements".format(words.count))
+# for word in words.iter():
+#     print("data: {}".format(word))
 
-print("delete the first item in the list")
-words.delete('foo')
-print("size: {}".format(words.count))
-for word in words.iter():
-    print("data: {}".format(word))
+# print("delete the first item in the list")
+# words.delete('foo')
+# print("size: {}".format(words.count))
+# for word in words.iter():
+#     print("data: {}".format(word))
 
-print("delete the last item in the list")
-words.delete('quux')
-print("size: {}".format(words.count))
-for word in words.iter():
-    print("data: {}".format(word))
+# print("delete the last item in the list")
+# words.delete('quux')
+# print("size: {}".format(words.count))
+# for word in words.iter():
+#     print("data: {}".format(word))
