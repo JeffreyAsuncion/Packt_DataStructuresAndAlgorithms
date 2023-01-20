@@ -22,12 +22,18 @@ class SinglyLinkedList:
         node = Node(data)
         if self.head:
             # note the tail is stationary, while the head grows
+            # point self.head.next ==>> new node
             self.head.next = node
+            # reset  self.head ==>> new node
             self.head = node
             print('adding')
         else:
             # note the tail is stationary, while the head grows
+            # since list is empty
+            # point tail and head ==>> new node 
+            # tail is stationary
             self.tail = node
+            # new nodes are appended to head
             self.head = node
             print('1st add')
         self.count += 1
@@ -37,26 +43,34 @@ class SinglyLinkedList:
     # https://realpython.com/introduction-to-python-generators/
     def iter(self):
         """ Iterate through the list. """
+        # a generator of data values
         current = self.tail
         while current:
             val = current.data
             current = current.next
             yield val
 
-    
 
     def delete(self, data):
         """ Delete a node from the list """
         current = self.tail
         prev = self.tail
         while current:
+            # if you found the data point
             if current.data == data:
+                # if you are at endpoint tail
                 if current == self.tail:
+                    # point tail to current.next
+                    # don't lose the tail
                     self.tail = current.next
                 else:
+                    # not at tail endpoint
+                    # delete current by skipping current 
+                    # point prev.next to current.next
                     prev.next = current.next
                 self.count -= 1
                 return
+            # iterate prev and current
             prev = current
             current = current.next
 
@@ -70,20 +84,28 @@ class SinglyLinkedList:
 
     # this allows s[i] to __getitem__
     def __getitem__(self, index):
+        # index is out of range
         if index > self.count - 1:
             raise Exception("Index out of range.")
+        # start at the tail endpoint
         current = self.tail
+        # iterate up to but not including index
         for n in range(index):
             current = current.next
+        # drops off at the index
         return current.data
 
     # this allows s[i] = newData to __setitem__
     def __setitem__(self, index, value):
+        # index is out of range
         if index > self.count - 1:
             raise Exception("Index out of range.")
+        # start at the tail endpoint
         current = self.tail
+        # iterate up to but not including index
         for n in range(index):
             current = current.next
+        # replace old value with new value
         current.data = value
 
 

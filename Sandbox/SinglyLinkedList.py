@@ -1,39 +1,85 @@
-class Node:
+class Node(object):
     def __init__(self, data=None):
         self.data = data
         self.next = None
 
-class SinglyLinkedList:
+class SinglyLinkedList(object):
     def __init__(self):
         self.tail = None
         self.head = None
-        self.size = 0
+        self.count = 0
 
     def append(self, data):
         node = Node(data)
         if self.head:
-            # point self.head.next ==>> new node
             self.head.next = node
-            # reset  self.head ==>> new node
             self.head = node
-        # self.head == None, list is empty
         else:
-            # since list is empty
-            # point tail and head ==>> new node 
-            # tail is stationary
             self.tail = node
-            # new nodes are appended to head
             self.head = node
-        self.size += 1
+        self.count += 1
 
-    def  
+    def iter(self):
+        current = self.tail
+        while current:
+            val = current.data
+            current = current.next
+            yield val
+    
+    def delete(self, data):
+        current = self.tail
+        prev = self.tail
+        while current:
+            if current.data == data:
+                if current == self.tail:
+                    self.tail = current.next
+                else:
+                    prev.next = current.next
+                self.count += 1
+                return
+            prev = current
+            current = current.next
+            
+    def search(self, data):
+        for node in self.iter():
+            if data == node:
+                return True
+            return False
+
+    def __getitem__(self, index):
+        if index > self.count - 1 :
+            raise Exception("Index out of range")
+        current = self.tail
+        for n in range(index-1):
+            current = current.next
+        return current.data
+
+    def __setitem__(self, index, value):
+        if index > self.count - 1:
+            raise Exception("Index out of range")
+        current = self.tail
+        for n in range(index-1):
+            current = current.next
+        current.data = value
 
 
 
-s = SinglyLinkedList()
 
-for i in range(100):
-    s.append(i)
 
-print(s.size)
+
+
+if __name__ == '__main__':
+    sll = SinglyLinkedList()
+
+    for i in range(20):
+        sll.append(i)
+
+    print(sll.count)
+    print(*sll.iter())
+
+    print(sll[9])
+    sll[10] = 90
+    print(*sll.iter())
+    sll.delete(90)
+    print(*sll.iter())
 
