@@ -90,7 +90,7 @@ class SinglyLinkedList:
         # start at the tail endpoint
         current = self.tail
         # iterate up to but not including index
-        for n in range(index):
+        for n in range(index-1):
             current = current.next
         # drops off at the index
         return current.data
@@ -103,7 +103,7 @@ class SinglyLinkedList:
         # start at the tail endpoint
         current = self.tail
         # iterate up to but not including index
-        for n in range(index):
+        for n in range(index-1):
             current = current.next
         # replace old value with new value
         current.data = value
