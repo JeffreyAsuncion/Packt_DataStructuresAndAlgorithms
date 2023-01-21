@@ -48,22 +48,26 @@ class DoublyLinkedList(object):
 
     def delete(self, data):
         """ Delete a node from the list. """
+        # start at the head
         current = self.head
+        # set a node_delete flag
         node_deleted = False
+        # if list is empty - edge case
         if current is None:
             node_deleted = False
-
+        # if data at head - edge case
         elif current.data == data:
             self.head = current.next
             self.head.prev = None
             node_deleted = True
-
+        # if data at tail - edge case
         elif self.tail.data == data:
             self.tail = self.tail.prev
             self.tail.next = None
             node_deleted = True
-
+        # not found, iter through linked list 
         else:
+            # traverse from head to tail
             while current:
                 if current.data == data:
                     current.prev.next = current.next
